@@ -1,0 +1,178 @@
+
+/* ===============================================
+   Video Technical Sheet (Ficha Técnica)
+   =============================================== */
+
+/* Button */
+.ficha-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    width: 100%;
+}
+
+.ficha-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Modal Overlay */
+.ficha-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
+}
+
+.ficha-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Modal Content */
+.ficha-content {
+    background: #1f2937; /* Dark gray */
+    color: #f3f4f6;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.ficha-modal.active .ficha-content {
+    transform: translateY(0);
+}
+
+/* Close Button */
+.ficha-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    z-index: 10;
+}
+
+.ficha-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Title */
+.ficha-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    padding-right: 2rem;
+}
+
+/* Data Table/Grid */
+.ficha-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+}
+
+.ficha-table th, 
+.ficha-table td {
+    padding: 0.8rem 0;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    vertical-align: top;
+}
+
+.ficha-table th {
+    width: 30%;
+    color: #9ca3af;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.ficha-table td {
+    font-weight: 400;
+    color: #e5e7eb;
+}
+
+/* Prompt Highlight */
+.prompt-box {
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    background: rgba(99, 102, 241, 0.1); /* Primary color low opacity */
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+.prompt-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-style: normal;
+}
+
+@media (max-width: 640px) {
+    .ficha-content {
+        padding: 1.5rem;
+    }
+    
+    .ficha-table th, 
+    .ficha-table td {
+        display: block;
+        width: 100%;
+    }
+    
+    .ficha-table th {
+        padding-bottom: 0.2rem;
+        color: var(--secondary-color);
+    }
+    
+    .ficha-table td {
+        padding-top: 0;
+        padding-bottom: 1rem;
+    }
+}
